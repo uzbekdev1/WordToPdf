@@ -1,9 +1,8 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using WordToPdf;
 
-namespace ConsoleApplication2
+namespace Demo
 {
     internal class Program
     {
