@@ -12,6 +12,8 @@ namespace WordToPdf.docto
 
         public override void ConvertTo(string output, string password = "")
         {
+            base.ConvertTo(output, password);
+
             var args = "-f \"" + Input + "\" -O \"" + output + "\" -T wdFormatPDF";
             var pathExe = Path.Combine(Environment.CurrentDirectory, "Converter", "docto.exe");
 

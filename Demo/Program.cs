@@ -31,8 +31,9 @@ namespace Demo
 
             //converting process
             var pathConvert = Path.Combine(ReflectionProperty.AssemblyFolder, "Upload", "T1.pdf");
-            //WithOfficeDoParsing(pathDest, pathConvert);
-            WithoutOfficeDoParsing(pathDest, pathConvert);
+
+             WithOfficeDoParsing(pathDest, pathConvert);
+             WithoutOfficeDoParsing(pathDest, pathConvert);
 
             //run in process result
             Process.Start(pathConvert);

@@ -12,6 +12,8 @@ namespace WordToPdf.GemBoxDocument
 
         public override void ConvertTo(string output, string password = "")
         {
+            base.ConvertTo(output,password);
+            
             LicensePackaging.Setup();
 
             var docModel = DocumentModel.Load(Input);
