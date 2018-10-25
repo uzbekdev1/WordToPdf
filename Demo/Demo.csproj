@@ -49,10 +49,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="templates\t1.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WordToPdf\WordToPdf.csproj">
+    <Content Include="upload\readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordToPdf.docto\WordToPdf.docto.csproj">
       <Project>{FEC4648C-1382-4608-9F95-2E915809D1A0}</Project>
+      <Name>WordToPdf.docto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordToPdf.GemBoxDocument\WordToPdf.GemBoxDocument.csproj">
+      <Project>{20af6c28-d8cc-4302-af99-f722b2754188}</Project>
+      <Name>WordToPdf.GemBoxDocument</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordToPdf\WordToPdf.csproj">
+      <Project>{64D81AF2-B3F1-4CCA-A1D2-5EE459F9134E}</Project>
       <Name>WordToPdf</Name>
     </ProjectReference>
   </ItemGroup>

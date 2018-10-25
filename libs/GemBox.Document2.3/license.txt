@@ -1,0 +1,1 @@
+    ComponentInfo.SetLicense("DTZX-HTZ5-B7Q6-2GA6");

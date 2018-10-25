@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DocumentFormat.OpenXml.Packaging;
 using OpenXmlPowerTools;
 
@@ -6,19 +7,19 @@ namespace WordToPdf
 {
     public static class WordReplacer
     {
-        public static void DoReplace(string path)
+        /// <summary>
+        /// Key is include #{KEY}#=Value
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="keyValues"></param>
+        public static void DoReplace(string path, IDictionary<string, string> keyValues)
         {
-            var orgSeller = "SELLER_ORG";
-            var orgBuyer = "BUYER_ORG";
-            var dealNum = "DEAL_NUMBER";
-            var dealDate = "DEAL_DATE";
-
             using (var doc = WordprocessingDocument.Open(path, true))
             {
-                TextReplacer.SearchAndReplace(doc, "#" + orgSeller + "#", "ORG1", true);
-                TextReplacer.SearchAndReplace(doc, "#" + orgBuyer + "#", "ORG2", true);
-                TextReplacer.SearchAndReplace(doc, "#" + dealNum + "#", "1", true);
-                TextReplacer.SearchAndReplace(doc, "#" + dealDate + "#", DateTime.Today.ToShortDateString(), true);
+                foreach (var keyValue in keyValues)
+                {
+                    TextReplacer.SearchAndReplace(doc, "#" + keyValue.Key + "#", keyValue.Value, true);
+                }
             }
         }
     }
